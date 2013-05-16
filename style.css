@@ -1,0 +1,439 @@
+* {margin: 0px; padding: 0px;}
+
+body {
+	height: 100%;
+	background-color: #ffffff;
+	color: #85859c;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+}
+
+a {color: #85859c; text-decoration: none;}
+
+a:hover {color: #69699c; }
+
+img {border: none; }
+
+p {
+	margin: 10px 0px 5px;
+	text-align: justify;
+	line-height: 14px;
+}
+
+input {
+	padding-left: 2px;
+	height: 15px;
+	background-color: #fff;
+	color: #85859c;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #85859c;
+}
+select {
+	padding-left: 2px;
+	height: 18px;
+	background-color: #fff;
+	color: #85859c;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #85859c;
+}
+
+input.botao{
+	padding-left: 2px;
+	height: 15px;
+	background-color: #666;
+	color: #fff;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+	border: 0px;
+}
+
+#container {
+	width:980px; 
+	margin:0 auto; 
+	min-height: 100%; 
+	height:auto !important; 
+	height:100%;
+}
+
+/* Page Header */
+
+#page_header {
+	width: 980px;
+	height: 113px;
+	color: #fff;
+	background: url('images/header_background.gif') repeat-x 0px 0px;
+	float:left;
+}
+#page_header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#page_header a:hover {
+	color: #e1e1e1;
+}
+
+#page_heading {
+	width: 720px;
+	height: 100px;
+	float: left;
+	background: url('images/cellphone.png') no-repeat 250px 0px;
+	
+}
+
+#page_heading h1 {
+	padding-top: 20px;
+	width: 190px;
+	float: left;
+	color:#710bab;
+	text-align: center;
+    
+}
+
+#page_heading h2 {
+	width: 190px;
+	float: left;
+	clear: both;
+	color:#8c38bd;
+	 text-align: center;
+}
+
+#page_heading span{ color:#8c38bd;}
+
+#login {
+    float: left;
+    padding-top: 8px;
+    text-align: left;
+}
+
+#login form{margin-left: 100px;}
+#login input.botao {
+	padding-bottom: 2px;
+	margin-left: 100px;
+	width: 34px;
+	height: 15px;
+	float: left;
+	background-color: #666;
+	color: #fff;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+}
+
+#login input {
+	padding-left: 2px;
+	background-color: #fff;
+	color: #85859c;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 11px;
+	border: none;
+}
+
+
+/* Main Navigation Menu */
+
+#page_menu {
+	margin-bottom: 1px;
+	width: 100%;
+	height: 21px;
+	float:left;
+}
+
+#page_menu ul {
+	width: 980px;
+	height: 21px;
+	list-style-type: none;
+	overflow: hidden;
+
+}
+
+#page_menu li {
+	margin-right: 1px;
+	width: 129px;
+	height: 21px;
+	float: left;
+	background: url('images/menu_background.gif') repeat-x 0px 0px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#page_menu li.last {margin-right: 0px; width: 460px;}
+
+#page_menu a {
+	padding-top: 3px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+
+#page_menu a:hover {
+	color: #e1e1e1;
+}
+
+
+/* Left Sidebar */
+
+#left_sidebar {
+	width: 129px;
+	float: left;
+	text-align: left;
+	color: #8989b6;
+}
+
+#left_sidebar a {
+	color: #8989b6;
+}
+
+#left_sidebar a:hover {
+	color: #75759c;
+}
+
+
+
+/* Left Sidebar: Newsletter Signup Box */
+
+#newsletter {
+	margin-bottom: 2px;
+	padding: 5px 5px 15px;
+	width: 118px;
+	border-color: #9e9ec3;
+	border-width: 1px 1px 1px 0px;
+	border-style: solid;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+
+/* Left Sidebar : Categories */
+
+#categories {
+    border-color: #9E9EC3;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    margin-bottom: 1px;
+    overflow: hidden;
+    padding: 1px 1px 1px 0;
+    text-align: center;
+}
+
+#categories_header {
+	margin-bottom: 2px;
+	width: 127px;
+	height: 20px;
+	background-color: #9e9ec3;
+	overflow: hidden;
+}
+
+#categories_header h2 {
+	margin-top: 3px;
+	margin-left: 5px;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#categories ul {
+	margin: 0px auto;
+	width: 120px;
+	list-style-type: none;
+}
+
+#categories li {
+	width: 120px;
+	height: 21px;
+	list-style-type: none;
+	text-align: left;
+	border-bottom: #b6b6d2 1px solid;
+	float: left;
+}
+
+#categories li input[type=text] {
+    margin-right: 2px;
+    width: 90px;
+}
+
+#categories li:last-child {border: none;}
+
+#categories li a {
+	margin-top: 4px;
+	margin-left: 6px;
+	display: block;
+	color: #7575a9;
+	text-decoration: none;
+}
+
+#categories li a:hover {color: #56567c;}
+
+
+/* Left Sidebar : Special Offer */
+
+#specialoffer {
+	width: 129px;
+	height: 98px;
+	padding-top: 20px;
+	overflow: hidden;
+	background: url('images/specialoffer_background.jpg') no-repeat 0px 0px;
+	color: #fff;
+	font-size: 11px;
+	text-align:center;
+}
+
+/* Main Content Area */
+
+#main_content {
+	width: 850px;
+	text-align: center;
+	float: left;
+}
+
+#main_content .h_divider {
+	height: 1px;
+	background-color: #c2c2cd;
+	overflow: hidden;
+}
+#miolo{
+    width: 849px;
+    float:left;
+    margin-left: 1px;
+    border-right: solid 1px #ccc;
+
+}
+#miolo form.cad{margin-left: 150px; margin-top: 10px; font-weight: bold;}
+#miolo p {text-align: center;}
+#campos{float:left; margin-right:10px;}
+#miolo .meio{margin:10px; text-align:center}
+
+#resultado {margin-left: 10px; padding-top: 10px; font-size: 12px; font-weight: bold;}
+#resultado h5{text-align: center;} 
+#resultado div.produto{float: left; height:30px; width: 60%;}
+#resultado div.disp{ float: left; width: 30%; color: #ccc; height:30px;}
+
+#resultado div.frete{ float: left; width: 10%; color: green;  }
+#resultado div.valor{float: left; color: #e31f1f; width: 15%;}
+#resultado div.imagem{float: left; width: 10%; padding-bottom: 5px; }
+#resultado div.prodnome{float: left; width: 35%; }
+#resultado div.quant{float: left; width: 5%;}
+#resultado h3.status{color: green;}
+
+
+#rodape_carrinho div{float:right; padding-right: 10px}
+#rodape_carrinho div.valor_frete{padding-top: 10px; font-size: 14px; font-weight: bold; color: green}
+#rodape_carrinho div.total{padding-top: 10px; font-size: 18px; font-weight: bold; color: red}
+#rodape_carrinho div.pagto{padding-top: 10px; font-size: 11px; font-weight: bold; color: blue}
+
+
+
+#titulo{
+  background-color: #c2c2cd;
+  height: 21px;
+  color: #8c38bd;
+  font-size: 12px;
+  text-align:left;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-left: 10px;
+  
+}
+
+#item_nv1_l{
+   margin-left: 1px;
+   margin-bottom: 1px;
+   padding: 4px;
+   width: 411px;
+   Height: 220px;
+   float:left; 
+   border: #cccccc 1px solid;
+   
+}
+#item_nv1_r{
+   margin-left: 1px;
+   margin-bottom: 1px;
+   padding: 4px;
+   width: 411px;
+   Height: 220px;
+   float:right; 
+   border: #cccccc 1px solid;
+   
+}
+#item_nv2{float:left; width: 220px; text-align:left;}
+#item_nv2 span.moeda{ color: #e31f1f; margin-top: 10px; font-size: 21px; font-weight: bold;}
+#item_nv2 span.frete{ color: green; margin-top: 10px; font-size: 14px; font-weight: bold;}
+#item_nv2 span.disp{ color:#ccc; margin: 10px; font-size: 14px; font-weight: bold;}
+#item_nv2 img{margin-left: 10px;}
+#item_nv3{float:left; width: 180px;}
+#item_nv3 img{ 
+    text-align: right;
+    width: 100%;
+}
+
+#item_det1{
+   margin-left: 1px;
+   margin-bottom: 1px;
+   padding: 4px;
+   width: 839px;
+   Height: 100%;
+   float:left; 
+   border: #cccccc 1px solid;
+   
+}
+
+/* Page Footer */
+
+#page_footer {width: 980px;}
+
+#powered_by {
+	padding-top: 17px;
+	float: right;
+	width: 305px;
+	height: 30px;
+	color: #9595c2;
+	text-align: center;
+}
+
+#powered_by a {	color: #9595c2;}
+
+#product_brands {float: left;}
+
+#product_brands ul {list-style-type: none;}
+
+#product_brands li {
+    float: left;
+    height: 52px;
+    list-style-type: none;
+    margin: 5px 6px 3px 3px;
+    width: 200px;
+}
+
+#product_brands li.Nokia {background: url('images/nokia.jpg') no-repeat 0px 0px;}
+
+#product_brands li.Apple {background: url('images/apple.jpg') no-repeat 0px 0px;}
+
+#product_brands li.Samsung {background: url('images/samsung.jpg') no-repeat 0px 0px;}
+
+#product_brands li.Sony {background: url('images/sony.jpg') no-repeat 0px 0px;}
+
+#miolo.listprod p {
+    text-align: left;
+    padding-left: 10px;
+}
+#miolo.listprod p span {
+    font-weight: bold;
+    vertical-align: top;
+}
+#miolo.listprod table {
+    padding-left: 10px;
+    width: 100%;
+}
+#miolo.listprod table tr.linha_escura {
+    background-color: #EEEEEE;
+}
+#miolo.listprod table tr:first-child {
+    background-color: #CCCCCC;
+}
+#miolo.listprod table tr td {
+    line-height: 20px;
+    padding: 0 5px;
+}

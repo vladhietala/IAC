@@ -1,0 +1,215 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.9.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Mar 08, 2013 as 04:33 PM
+-- Versão do Servidor: 5.0.67
+-- Versão do PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Banco de Dados: `lojavirtual`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categoria`
+--
+
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `CatCodigo` int(10) unsigned NOT NULL auto_increment,
+  `CatNome` varchar(20) NOT NULL,
+  PRIMARY KEY  (`CatCodigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `categoria`
+--
+
+INSERT INTO `categoria` (`CatCodigo`, `CatNome`) VALUES
+(1, 'Nokia'),
+(2, 'Apple');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cliente`
+--
+
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `CliCodigo` int(10) unsigned NOT NULL auto_increment,
+  `Estado_EstCodigo` varchar(2) NOT NULL,
+  `Sexo_Sexo` char(1) NOT NULL,
+  `CliNome` varchar(50) NOT NULL,
+  `CliEndereco` varchar(50) NOT NULL,
+  `CliBairro` varchar(20) NOT NULL,
+  `CliCidade` varchar(20) NOT NULL,
+  `CliFoneRes` int(10) unsigned NOT NULL,
+  `CliFoneCel` int(10) unsigned default NULL,
+  `CliCPF` double NOT NULL,
+  `CliEmail` varchar(50) NOT NULL,
+  `CliSenha` varchar(128) NOT NULL,
+  `CliCEP` int(10) unsigned NOT NULL,
+  `CliLembrete` varchar(128) NOT NULL,
+  `CliAdmin` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`CliCodigo`),
+  KEY `Cliente_FKIndex1` (`Sexo_Sexo`),
+  KEY `Cliente_FKIndex2` (`Estado_EstCodigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`CliCodigo`, `Estado_EstCodigo`, `Sexo_Sexo`, `CliNome`, `CliEndereco`, `CliBairro`, `CliCidade`, `CliFoneRes`, `CliFoneCel`, `CliCPF`, `CliEmail`, `CliSenha`, `CliCEP`, `CliLembrete`, `CliAdmin`) VALUES
+(1, 'PR', 'M', 'Gustavo', 'asdasdasd', 'asdas', 'asdasd', 4294967295, 4294967295, 1, 'gsdfsd@asd.com', 'e10adc3949ba59abbe56e057f20f883e', 5142451, '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estado`
+--
+
+CREATE TABLE IF NOT EXISTS `estado` (
+  `codigo` int(11) NOT NULL auto_increment,
+  `EstCodigo` varchar(2) NOT NULL,
+  `EstNome` varchar(30) NOT NULL,
+  PRIMARY KEY  (`codigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`codigo`, `EstCodigo`, `EstNome`) VALUES
+(1, 'AC', 'Acre'),
+(2, 'AL', 'Alagoas'),
+(3, 'AP', 'Amapá'),
+(4, 'AM', 'Amazonas'),
+(5, 'BA', 'Bahia'),
+(6, 'CE', 'Ceará'),
+(7, 'DF', 'Distrito Federal'),
+(8, 'ES', 'Espírito Santo'),
+(9, 'GO', 'Goiás'),
+(10, 'MA', 'Maranhão'),
+(11, 'MT', 'Mato Grosso'),
+(12, 'MS', 'Mato Grosso do Sul'),
+(13, 'MG', 'Minas Gerais'),
+(14, 'PA', 'Pará'),
+(15, 'PB', 'Paraíba'),
+(16, 'PR', 'Paraná'),
+(17, 'PE', 'Pernambuco'),
+(18, 'PI', 'Piauí'),
+(19, 'RJ', 'Rio de Janeiro'),
+(20, 'RN', 'Rio Grande do Norte'),
+(21, 'RS', 'Rio Grande do Sul'),
+(22, 'RO', 'Rondônia'),
+(23, 'RR', 'Roraima'),
+(24, 'SC', 'Santa Catarina'),
+(25, 'SP', 'São Paulo'),
+(26, 'SE', 'Sergipe'),
+(27, 'TO', 'Tocantins');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `itenspedido`
+--
+
+CREATE TABLE IF NOT EXISTS `itenspedido` (
+  `Produto_ProdCodigo` int(10) unsigned NOT NULL,
+  `Pedido_PedNum` int(10) unsigned NOT NULL,
+  `Quantidade` int(10) unsigned NOT NULL,
+  `ValorUnit` double NOT NULL,
+  PRIMARY KEY  (`Produto_ProdCodigo`,`Pedido_PedNum`),
+  KEY `Produto_has_Pedido_FKIndex1` (`Produto_ProdCodigo`),
+  KEY `ItensPedido_FKIndex2` (`Pedido_PedNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `itenspedido`
+--
+
+INSERT INTO `itenspedido` (`Produto_ProdCodigo`, `Pedido_PedNum`, `Quantidade`, `ValorUnit`) VALUES
+(1, 5, 1, 12.12),
+(1, 11, 2, 12.12),
+(4, 1, 10, 331);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedido`
+--
+
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `PedNum` int(10) unsigned NOT NULL auto_increment,
+  `Cliente_CliCodigo` int(10) unsigned NOT NULL,
+  `PedData` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `PedStatus` char(1) NOT NULL,
+  `PedFrete` double default NULL,
+  PRIMARY KEY  (`PedNum`),
+  KEY `Pedido_FKIndex1` (`Cliente_CliCodigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Extraindo dados da tabela `pedido`
+--
+
+INSERT INTO `pedido` (`PedNum`, `Cliente_CliCodigo`, `PedData`, `PedStatus`, `PedFrete`) VALUES
+(1, 1, '2013-03-08 16:23:41', 'P', 20),
+(2, 1, '2013-02-02 17:48:47', 'A', 20),
+(3, 1, '2013-02-27 22:12:40', 'A', 20),
+(4, 1, '2013-02-27 22:13:08', 'A', 20),
+(5, 1, '2013-02-27 22:13:58', 'A', 20),
+(6, 1, '2013-02-27 22:14:13', 'A', 20),
+(7, 1, '2013-03-08 15:57:51', 'A', 20),
+(8, 1, '2013-03-08 16:01:06', 'A', 20),
+(9, 1, '2013-03-08 16:03:32', 'A', 20),
+(10, 1, '2013-03-08 16:04:03', 'A', 20),
+(11, 1, '2013-03-08 16:05:18', 'A', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE IF NOT EXISTS `produto` (
+  `ProdCodigo` int(10) unsigned NOT NULL auto_increment,
+  `Categoria_CatCodigo` int(10) unsigned NOT NULL,
+  `ProdNome` varchar(45) NOT NULL,
+  `ProdDesc` text,
+  `ProdValorVenda` double default NULL,
+  `ProdQuantidade` int(10) unsigned default NULL,
+  PRIMARY KEY  (`ProdCodigo`),
+  KEY `Produto_FKIndex1` (`Categoria_CatCodigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`ProdCodigo`, `Categoria_CatCodigo`, `ProdNome`, `ProdDesc`, `ProdValorVenda`, `ProdQuantidade`) VALUES
+(1, 2, 'teste', 'teste de produto', 12.12, 2),
+(4, 2, 'produto codigo 11', 'ss', 331, 111),
+(6, 0, 'asdasd', 'asdasd', 0, 0),
+(7, 2, 'produto 3', 'produto 3', 150, 150);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sexo`
+--
+
+CREATE TABLE IF NOT EXISTS `sexo` (
+  `Sexo` char(1) NOT NULL,
+  PRIMARY KEY  (`Sexo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sexo`
+--
+
